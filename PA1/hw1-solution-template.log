@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  4 SEP 2019 19:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  8 SEP 2019 23:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -86,7 +86,7 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@uldp=\dimen107
 \SOUL@ulht=\dimen108
 )
-No file hw1-solution-template.aux.
+(./hw1-solution-template.aux)
 \openout1 = `hw1-solution-template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -101,6 +101,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
+
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count95
@@ -169,32 +170,116 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 60.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 69.
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--80
+
+ []
+
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<lion-logo.png, id=9, 350.30875pt x 221.82875pt>
-File: lion-logo.png Graphic file (type png)
-<use lion-logo.png>
-Package pdftex.def Info: lion-logo.png  used on input line 78.
-(pdftex.def)             Requested size: 234.8775pt x 148.73618pt.
+Underfull \hbox (badness 10000) in paragraph at lines 81--86
 
-[2 <./lion-logo.png>] (./hw1-solution-template.aux) ) 
+ []
+
+<1ef.jpg, id=13, 2216.28pt x 1246.6575pt>
+File: 1ef.jpg Graphic file (type jpg)
+<use 1ef.jpg>
+Package pdftex.def Info: 1ef.jpg  used on input line 97.
+(pdftex.def)             Requested size: 234.8775pt x 132.11082pt.
+[2 <./1ef.jpg>] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+
+ []
+
+<cmd-output.png, id=22, 574.145pt x 297.11pt>
+File: cmd-output.png Graphic file (type png)
+<use cmd-output.png>
+Package pdftex.def Info: cmd-output.png  used on input line 264.
+(pdftex.def)             Requested size: 234.8775pt x 121.54387pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<wireshark-output.png, id=24, 1192.455pt x 576.1525pt>
+File: wireshark-output.png Graphic file (type png)
+<use wireshark-output.png>
+Package pdftex.def Info: wireshark-output.png  used on input line 280.
+(pdftex.def)             Requested size: 234.8775pt x 113.47897pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--289
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 294--299
+
+ []
+
+<traceroute-output.png, id=29, 666.49pt x 311.1625pt>
+File: traceroute-output.png Graphic file (type png)
+<use traceroute-output.png>
+Package pdftex.def Info: traceroute-output.png  used on input line 313.
+(pdftex.def)             Requested size: 234.8775pt x 109.65393pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<wireshark-output-2.png, id=30, 1212.53pt x 784.9325pt>
+File: wireshark-output-2.png Graphic file (type png)
+<use wireshark-output-2.png>
+Package pdftex.def Info: wireshark-output-2.png  used on input line 327.
+(pdftex.def)             Requested size: 234.8775pt x 152.04915pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<traceroute-error-output.png, id=31, 1329.96875pt x 524.96124pt>
+File: traceroute-error-output.png Graphic file (type png)
+<use traceroute-error-output.png>
+Package pdftex.def Info: traceroute-error-output.png  used on input line 337.
+(pdftex.def)             Requested size: 234.8775pt x 92.71066pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5 <./cmd-output.png> <./wireshark-output.png>] [6 <./traceroute-output.png> <.
+/wireshark-output-2.png>] [7 <./traceroute-error-output.png>]
+(./hw1-solution-template.aux) ) 
 Here is how much of TeX's memory you used:
- 2042 strings out of 492616
- 29931 string characters out of 6129482
- 103704 words of memory out of 5000000
- 5960 multiletter control sequences out of 15000+600000
- 5156 words of font info for 19 fonts, out of 8000000 for 9000
+ 2107 strings out of 492616
+ 31116 string characters out of 6129482
+ 100704 words of memory out of 5000000
+ 6007 multiletter control sequences out of 15000+600000
+ 7903 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,25p,288b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on hw1-solution-template.pdf (2 pages, 144746 bytes).
+ 41i,6n,25p,288b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2019/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb>
+Output written on hw1-solution-template.pdf (7 pages, 1909405 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 80 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
