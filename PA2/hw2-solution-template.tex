@@ -1,0 +1,339 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{color,soul}
+
+\begin{document}
+%\newcommand{\answer}[1]{{\bf (Answer: #1)}}
+\newcommand{\answer}[1]{\mbox{~}}
+
+{\large  CSCE 464 Wireless and Mobile Systems  \hfill Fall 2019\\
+ \begin{center}
+   Homework 2 \\
+   (Murtaza Hakimi UIN: 3943 This homework will be peer graded) \\
+    \end{center}
+}
+
+Remove all highlights before typing your answer.
+
+\section{Signals}
+\begin{enumerate}[label=(\alph*)]
+\item {
+	Transmitted Power: $P_t$ \\
+	Received Power: $P_r$ \\
+	$P_t/P_r = (4\pi d / \lambda)^2$ \\
+	$P_t/P_r = (4\pi d f/ c )^2$ \\
+	
+	Case 1: $f = 2f$ (doubling the frequency) \\ 
+	$P_t/P_{r2} = (4\pi d (2f) / c)^2$ \\
+	$= 4(4\pi df/ c)^2$ \\
+	$P_t/P_r = 4$ \\
+	
+	Doubling the transmission frequency between transmitting antenna and receiving antenna is
+	$10log(P_t/P_r)dB = 10log(4) = 6dB$ \\
+
+	Case 2: $d=2d$ (doubling the distance) \\
+	$P_t/P_{r2} = (4\pi (2d)f / c)^2$ \\
+	$= 4(4\pi df/ c)^2$ \\
+	$P_t/P_r = 4$ \\
+	
+	Doubling the distance between transmitting antenna and receiving antenna is
+	$10log(P_t/P_r)dB = 10log(4) = 6dB$ \\
+}
+\item {that will satisfy the following requirements: Transmit power = 2
+	\begin{enumerate}[label=(\roman*)]
+	\item {
+		$P_{dbW} = 10log(P_w/1W)$
+		$= 10log(50) \approx 17dBW$ \\
+		
+		$P_{dbM} = 10log(P_{mW}/1mW)$
+		$= 10log(50000) \approx 47dBm$
+	}
+	
+	\item{
+		$L_{dB} = 10log(P_t/P_r)$
+		$= 20log(4\pi d/ \lambda)$
+		$= -20log(\lambda) + 20log(d) + 21.98$ \\
+		
+		$L_{dB} = 20log(4\pi f d/c)$
+		$ = 20log(f) + 20log(d) - 147.56dB$ \\
+		
+		$L_{dB} = 20log(900x10^6) + 20log(100) - 147.56$
+		$= 20log(900) + 20log(10^6) + 20log(100) - 147.56$
+		$= 59.08 + 120 + 40 - 147.56$
+		$= 71.52$ \\
+		
+		Received Power in dBm = $47-71.52 = \textbf{-24.52dBm}$
+	}
+	
+	\item {
+		$L_{dB} = 20log(f) + 20log(d) - 147.56dB$ \\
+	
+		$L_{dB} = 20log(900x10^6) + 20log(10x1000) - 147.56$ \\
+		$= 20log(900) + 20log(10^6) + 20log(10000) - 147.56$ \\ 
+		$= 59.08 + 120 + 80 + 147.56 = 111.52$ \\
+	
+		Received Power in dBm = $47 - 111.52 = \textbf{-64.52dBm}$
+	}
+	
+	\item { 
+		(Receiver antenna gains of 2) Power in dBm = $47 - 111.52 + 3 = \textbf{61.52}$
+	}
+	\end{enumerate}
+}
+\item {
+	$2W = 33.01 dBm$ \\
+	Path Loss: $L_p = P_t - P_r$ \\
+	$= 33.01 - (-105)log_{10}(5.2km) = 108.19$ \\ 
+}
+\end{enumerate}
+ 
+ 
+\section{OFDM}
+\begin{enumerate}[label=(\alph*)]
+\item {
+	OFDM is a modulation technique that uses many carriers that are orthogonal to each other.
+	Having lower rate subcarriers is helpful because it allows transmission of more symbols per second. 
+	This means the data rate is increased and the serial data is processed in parallel.
+}
+\end{enumerate}
+
+
+\section{Spread Spectrum}
+\begin{enumerate}[label=(\alph*)]
+\item {
+	$W_s = 400 MHz$ \\
+	$bw = 100 Hz$ \\ 
+	
+	Total number of channels: \\
+	$W_s/bw = 400MHz/100 = 4x10^6$ \\ 
+	
+	Minimum number of PN bits required: \\ 
+	$= log_2(4x10^6) = \textbf{21.93}$
+	
+}
+\end{enumerate}
+	
+
+\section{Aloha}
+\begin{enumerate}[label=(\alph*)]
+\item {
+	The window of vulnerability is the time in which the packet is being transmitted that it can suffer a collision. 
+	The window is directly related to the throughput because the window determines when you can/can't transmit packets. 
+	The larger the window, the smaller the throughput because there is more downtime when packets can't be sent.
+}
+\item {
+	No, the slot size should not be larger than L. There will be wasted time in sending data if the slot size is too long because
+	a packet would be sent in L time but the slot itself would still be 'reserved' for the remaining time. This would prevent other
+	nodes from using this channel.
+}
+\item {
+	\begin{enumerate}[label=(\Alph*)]
+	\item {
+		Let probability $p$ be no success in slots 1 and 2, but success in slot 3. The probability of success is $P(A)$ and no success is $1 - P(A)$ \\
+		$P(A) = A transmits and B does not and C does not$ \\
+		$P(A) = P(1 - P)(1 - P) = P(1 - P)^2$ \\
+		$P(A succeeds in slot 3) = (1 - P(A))^2 P(A)$ \\
+		$P(A succeeds in slot 3) = (1 - P(1 - P)^2)^2 * P(1 - P)^2$}
+	\item {
+		Add probabilities of all three nodes together: \\
+		$= P(A_3) + P(B_3) + P(C_3)$ \\
+	 	$= P(1 - P) + P(1 - P) + P(1 - P)$ \\
+	 	$= 3P(1 - P)$
+	} 
+	\item {
+		Probability of any node succeeding in a given slot is $3p(1 - p)^2$ \\
+		Probability that no node succeeds during a slot is $1 - 3p(1 - p)^2$ \\
+		
+		Thus, the probability that there is no success the first two slots, but any of the three nodes succeeds in the third slot is: \\
+		$= (1 - 3p(1 - p)^2 + 1 - 3p(1 - p)^2) + 3p(1 - p)^2$ \\
+		$= (1 - 3p(1 - p)^2)^2 * 3p(1-p)^2 $
+	}
+	\end{enumerate}
+}
+\end{enumerate}
+
+\section{CSMA}
+\begin{enumerate}[label=(\alph*)]
+\item {
+	A higher CS threshold will allow for more spatial re-use but will result in more interference. The inverse happens if 
+	the CS threshold is lowered. There would be less interference but also less spatial re-use.
+}
+\item {
+	An example scenario would be three nodes, equidistance apart from each other. Nodes: $A, B, C$. 
+	In the example the signal can propagate only slightly more than the distance of separation between the nodes. 
+	So $A$ and $B$ can communication and $B$ and $C$ can communicate.
+	
+	The hidden terminal problem occurs when when $A$ and $C$ both send something to $B$ without being able 
+	to see that the other is already transmitting to $B$ because they are out of each other's range. This ultimately 
+	ends up resulting in a collision. 
+	
+	For the exposed terminal problem assume $B$ is sending some data to $A$ and $C$ wants to send data to 
+	some node $D$ which is outside the range of both $A$ and $B$. Since $B$ is in the range of $C$, $C$ thinks
+	that the carrier is busy and unnecessarily waits for $B$ to finish its transmission before sending the data to $D$
+}
+\item {
+	The main reason is the CAMA/CD listens whether the medium is free before transmitting any packets which
+	would be cumbersome on WiFi. In WiFi the sender isn't able to sense data moving about in the medium therefore
+	it wouldn't be able to detect collisions. Additionally, if a collision is detected all the users would have to wait to
+	re-transmit their data. In wireless networks CAMA/CA is used instead to avoid rather than detect collisions.
+}
+\item {
+	No it is not possible to avoid the hidden terminal problem with only physical carrier sense. Physical carrier sense 
+	listens on the channel to see if any node is transmitting on it. The node will assume the channel is clear if it doesn't 
+	sense anything on it but as we can see from the answer to part (b), if the nodes are out of each other's range they 
+	will both try to transmit and result in a collision.
+}	
+\item {
+	The virtual carrier sense is implemented with a timer that counts down signaling when a channel is clear. Each 
+	frame has a 'duration' field that is used to set/update the value of the timer.. When a client sends a frame it 
+	determines how long the channel is 'reserved' for. Without the physical carrier sense clients might miss these frames
+	meaning the timer would expire while the channel is still busy. Additionally, if a frame sets the duration too high, then the 
+	channel would be 'reserved' for too long.
+}
+\end{enumerate}
+
+\section{MAC Layer}
+\begin{enumerate}[label=(\alph*)]
+\item {
+	Total frame size = $28 + 1452 = 1480 bytes$, at 54Mbps, taking $1480 * 8 bytes/54 Mbps = 219.25 \mu s$ to transmit \\	
+	Acknowledge frame takes $14 * 8 bytes/54 Mbps = 2.07 \mu s$ to transmit \\
+	
+	Total time to transmit frame is DIFS, data, propagation, physical overhead, SIFS, the acknowledgement, propagation for the acknowledgement, and physical overhead for the acknowledgement. \\
+	 = $34 \mu s + 219.25 \mu s + 1 \mu s + 36 \mu s + 16 \mu s + 2.07 \mu s + 1 \mu s + 36 \mu s = 345.3 \mu s$ to transmit the frame. \\
+	Data throughput is $\approx 37 Mbps$
+}
+\item {
+	Known: \\
+	$219.25 \mu s$ transmit frame of data
+	$2.07 \mu s$ transmit acknowledge frame \\ 
+	$20 * 8 bytes/54 Mbps = 2.96 \mu s$ transmit RTS frame \\		
+	$14 * 8 bytes/54 Mbps = 2.07 \mu s$ send CTS frame \\
+	
+	When using RTS/CTS, the total time taken to transmit a frame is instead DIFS + RTS + propagation time + physical overhead + SIFS + CTS + propagation time + physical overhead + SIFS + data time + 		
+	propagation time + physical overhead + SIFS + acknowledgement + propagation time + physical overhead: \\
+	
+	$34 \mu s + 2.96 \mu s + 1 \mu s + 20 \mu s + 16 \mu s + 2.07 \mu s + 1 \mu s + 36 \mu s + 16 \mu s + 219.25 \mu s + 1 \mu s + 36 \mu s + 16 \mu s + 20 \mu s + 1 \mu s + 36 \mu s = 410 \mu s$ \\
+	
+	Total transmission throughput for the 1452 byte payload is $\approx 28.33 Mbps$.
+}
+\end{enumerate}
+
+\section{Wireshark}
+\begin{enumerate}[label=(\alph*)]
+\item {
+	30 Munroe St. \& linsys\_SES\_24086
+
+}
+\item {
+	$0.1024$ seconds
+}
+\item {
+	00:16:b6:f7:1d:51
+}
+\item {
+	ff:ff:ff:ff:ff:ff
+}
+\item  {
+	00:16:b6:f7:1d:51
+}
+\item  {
+	Supported Rates:
+	\begin{enumerate}
+		\item 1.0 Mbps
+		\item 2.0 Mbps
+		\item 5.5 Mbps
+		\item 11.0 Mbps
+	\end{enumerate}
+	
+	Extended Rates:
+	\begin{enumerate}
+		\item 6.0 Mbps
+		\item 9.0 Mbps
+		\item 12.0 Mbps
+		\item 18.0 Mbps
+		\item 24.0 Mbps
+		\item 36.0 Mbps
+		\item 48.0 Mbps
+		\item 54.0 Mbps
+	\end{enumerate}
+}
+\item  {
+	MAC Addresses for TCP SYN:
+	\begin{enumerate}
+		\item Sender:  00:13:02:d1:b6:4f
+		\item Destination/First Hop: 00:16:b6:f4:eb:a8
+		\item BSS: 00:16:b6:f7:1d:51
+	\end{enumerate}
+	
+	IP of Host Sending: 192.168.1.109 \\
+	Destination IP: 128.199.245.12 (corresponds to gaia.cs.umass.edu)
+}
+\item  {oh 
+	MAC Addresses for TCP SYNACK:
+	\begin{enumerate}
+		\item Sender/First Hop:  00:16:b6:f4:eb:a8
+		\item Destination: 91:2a:b0:49:b6:4f
+		\item BSS: 00:16:b6:f7:1d:51
+	\end{enumerate}
+	
+	IP of Host Sending: 128.199.245.12 (corresponds to gaia.cs.umass.edu) \\
+	Destination IP: 192.168.1.109 (corresponds to the wireless PC)
+}
+\item  {
+	1. A DHCP release is sent by the host to the DHCP server \\
+	2. The host sends a de-authentication frame \\
+	
+	Expected to see a disassociation request but one is not visible
+}
+\item  {
+	6 messages are sent
+}
+\item  {
+	The host is requesting that the association be open
+}
+\item  {
+	No, because AP is likely ignoring requests for open access since it is looking for a key
+}
+\item  {
+	Authentication Frame Sent: time = $63.168087$ \\
+	Reply Sent: time = $63.169071$
+}
+\item  {
+	Associate Request: time = $63.169910$
+	Associate Reply: time = $63.192101$
+}
+\item  {
+	Rates for both Association Request/Response:
+	\begin{enumerate}
+		\item 1.0 Mbps
+		\item 2.0 Mbps
+		\item 5.5 Mbps
+		\item 6.0 Mbps
+		\item 9.0 Mbps
+		\item 11.0 Mbps
+		\item 12.0 Mbps
+		\item 18.0 Mbps
+		\item 24.0 Mbps
+		\item 32.0 Mbps
+		\item 48.0 Mbps
+		\item 54.0 Mbps
+	\end{enumerate}
+}
+\item  {
+	MAC Addresses:
+	\begin{enumerate}
+		\item Sender:  ff:ff:ff:ff:ff:ff
+		\item Sender BSSID: f:ff:ff:ff:ff:ff
+		\item Receiver: 00:16:b6:f7:1d:51
+		\item Receiver BSSID: 00:16:b6:f7:1d:51
+	\end{enumerate}
+	
+	The purpose of a probe request is for active scanning to find an access point. 
+	The purpose of a probe response is to acknowledge the request
+}
+\end{enumerate}
+
+\end{document}
+
