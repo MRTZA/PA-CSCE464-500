@@ -1,0 +1,206 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{color,soul}
+\usepackage[table,xcdraw]{xcolor}
+
+\begin{document}
+%\newcommand{\answer}[1]{{\bf (Answer: #1)}}
+\newcommand{\answer}[1]{\mbox{~}}
+
+{\large  CSCE 464 Wireless and Mobile Systems  \hfill Fall 2019\\
+ \begin{center}
+   Homework 4 \\
+   (Murtaza Hakimi UIN: 325003943) \\
+    \end{center}
+}
+
+Remove all highlights before typing your answer.
+
+\section{Routing}
+\begin{enumerate}[label=(\alph*)]
+\item {
+	\begin{enumerate}[label=(\alph*)]
+		
+	\item {
+		Original Routing Table:
+		
+		\begin{tabular}{|ccc|ccc|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Host A}} & \multicolumn{3}{c|}{\textbf{Host D}} \\ \hline
+		\textbf{Dest} & \textbf{Next} & \textbf{Cost} & \textbf{Dest} & \textbf{Next} & \textbf{Cost} \\ \hline
+		A & * & 0 & A & A & 2 \\
+		B & B & 2 & B & C & 2 \\
+		C & D & 3 & C & C & 1 \\
+		D & D & 2 & D & * & 0 \\
+		E & D & 5 & E & C & 3 \\ \hline
+		\end{tabular} \\
+		
+		Doubled Routing Table:
+		
+		\begin{tabular}{|ccc|ccc|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Host A}} & \multicolumn{3}{c|}{\textbf{Host D}} \\ \hline
+		\textbf{Dest} & \textbf{Next} & \textbf{Cost} & \textbf{Dest} & \textbf{Next} & \textbf{Cost} \\ \hline
+		A & * & 0 & A & A & 4 \\
+		B & B & 4 & B & C & 4 \\
+		C & D & 6 & C & C & 12 \\
+		D & D & 4 & D & * & 0 \\
+		E & D & 10 & E & C & 6 \\ \hline
+		\end{tabular}
+	}
+	
+	\item {
+	
+		Original Link Costs:
+		
+		\begin{tabular}{|ccc|ccc|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Host A}} & \multicolumn{3}{c|}{\textbf{Host D}} \\ \hline
+		\textbf{Dest} & \textbf{Next} & \textbf{Cost} & \textbf{Dest} & \textbf{Next} & \textbf{Cost} \\ \hline
+		A & * & 0 & A & A & 2 \\
+		B & -- & -- & B & -- & -- \\
+		C & D & 3 & C & -- & -- \\
+		D & D & 2 & D & * & 0 \\
+		E & D & 5 & E & -- & -- \\ \hline
+		\end{tabular} \\
+		
+		Double Linked Costs:
+		
+		\begin{tabular}{|ccc|ccc|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Host A}} & \multicolumn{3}{c|}{\textbf{Host D}} \\ \hline
+		\textbf{Dest} & \textbf{Next} & \textbf{Cost} & \textbf{Dest} & \textbf{Next} & \textbf{Cost} \\ \hline
+		A & * & 0 & A & A & 4 \\
+		B & -- & -- & B & -- & -- \\
+		C & D & 6 & C & -- & -- \\
+		D & D & 4 & D & * & 0 \\
+		E & D & 10 & E & -- & -- \\ \hline
+		\end{tabular}
+	}
+	
+	\item {
+		Distance Vector:
+		
+		\begin{tabular}{|cc|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Host A}} \\ \hline
+		\textbf{Dest} & \textbf{Cost} \\ \hline
+		A & 0 \\
+		B & -- \\
+		C & 6 \\
+		D & 4 \\
+		E & 10 \\ \hline
+		\end{tabular} \\
+		
+		Updated Routing Table:
+		
+		\begin{tabular}{|ccc|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Host D}} \\ \hline
+		\textbf{Dest} & \textbf{Next} & \textbf{Cost} \\ \hline
+		A & A & 4 \\
+		B & -- & -- \\
+		C & A & 10 \\
+		D & * & 0 \\
+		E & A & 14 \\ \hline
+		\end{tabular}
+		
+	}
+	
+	\item {
+		Distance Vector:
+		
+		\begin{tabular}{|cc|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Host A}} \\ \hline
+		\textbf{Dest} & \textbf{Cost} \\ \hline
+		A & 4 \\
+		B & -- \\
+		C & 10 \\
+		D & 0 \\
+		E & 7 \\ \hline
+		\end{tabular} \\
+		
+		Updated Routing Table:
+		
+		\begin{tabular}{|ccc|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Host D}} \\ \hline
+		\textbf{Dest} & \textbf{Next} & \textbf{Cost} \\ \hline
+		A & * & 0 \\
+		B & -- & -- \\
+		C & D & 14 \\
+		D & D & 4 \\
+		E & D & 18 \\ \hline
+		\end{tabular}
+	}
+	
+	\end{enumerate}
+}
+\item (12) \\
+
+	 DHCP is used to simplify maintenance and setup of networked
+	 computers. It provides a mechanism for configuring nodes. The 
+	 entities of DHCP are DHCP relay, and DHCP server, etc..
+\item (13) \\
+
+	 DHCP is good for care-of-address for mobile nodes. Additionally, 
+	 its good for other parameters such as address of default router
+	 or DNS servers. 	
+\item (14) \\
+
+	 Differences between multi-hop ad hoc networks and other networks
+	 include, more than intermediate nodes along a path via wireless links. 
+	 This is useful in extending coverage and improving connectivity in a
+	 network. The other advantage of multi-hop networks is that transmission 
+	 over multiple short links requires less transmission power. 
+\item (15) \\
+
+	 Multi-hop routing is complicated because it can be asymmetric, non-transitive, 
+	 and time-varying. For example, one special challenge is the overlapping of ranges
+	 of several nodes. Additionally, there are bandwidth and resource constraints, 
+	 erroneous transmission mediums, and location-dependent contention problems.
+\item (16) \\
+
+	 Compared to routing data exchange, changes are very infrequent, so both algorithms
+	 assume a relatively stable network. Additionally, both establish routing tables
+	 regardless for the need of communication, making it difficult to use in multi-hop
+	 ad hoc networks, and using unnecessary bandwidth.
+\item (17) \\
+
+	 AODV offers quick adaptation to dynamic link conditions, low processing and 
+	 memory overhead, and low network utilization. The distance vector algorithm 
+	 determines the best route for data packets based on distance. Extensions are needed
+	 to improve performance like reducing routing and MAC loads.
+\item (18) \\
+
+	 Dynamic source routing divides keeping the route running and finding a route, that 
+	 way it only establishes a route when communication is required. In fixed networks, 
+	 routes are always calculated in advance. 
+\item (19) \\
+
+	 Most algorithms are incapable of handling asymmetric links. Additionally unidirectional
+	 links pose problems as well. For example, in DSR the receiver sends packets 
+	 between source and destination by choosing the routers in the reverse order.
+	 But if some reverse links do not exist the route still needs to be found.
+\item (21) \\
+
+	 Location information routing is designed for easy scalability in networks of a few
+	 hundred nodes.  Location information routing is also beneficial in reducing 
+	 routing overhead by reducing the propagation of control messages. 
+\item (22) \\
+
+	 Cars moving quickly throughout a city would change the topology too fast for all
+	 routing algorithms to adapt to. Flooding would be a potential solution. Its easier on
+	 the highway because since speeds are faster there are groups of cars with similar 
+	 speed and direction with allows for forwarding of these cars.
+	 
+\item Please provide the Readme for your Geographic Routing program.
+\end{enumerate}
+ 
+
+
+\end{document}
+
